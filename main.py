@@ -38,9 +38,5 @@ def show_home(event=None):
     document.querySelector("#welcome-view").classList.remove("hidden")
 
 # Initialize the page
-# This ensures that if the user clicks the brand logo, it returns home
 if __name__ == "__main__":
-    # If you want the page to start with the list hidden, we don't need to call anything yet.
-    # The links in your HTML navigate to different .html files (index2, index3, etc.),
-    # but if you stay on this page, the show_home function is ready.
     pass
