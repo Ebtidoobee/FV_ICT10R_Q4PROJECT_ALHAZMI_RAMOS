@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-Ruby Gallery 💎</title>
+    
+    <!-- External Assets -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root {
+            --ruby-red: #D32F2F;
+            --ruby-dark: #880E4F;
+            --ruby-light: #FFEBEE;
+            --gold: #FFD700;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #FFF5F5; 
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Fixed Navigation Bar --- */
+        nav {
+            width: 100%;
+            background-color: var(--ruby-red);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            height: 75px;
+            border-bottom: 4px solid var(--gold);
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 15px;
+        }
+
+        .nav-brand img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-brand span {
+            color: white;
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- Gallery Styles --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-grow: 1;
+        }
+
+        .photo-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            border: 1px solid #FFCDD2;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .photo-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .photo-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #fce4ec;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ruby-red);
+            font-size: 45px;
+        }
+
+        .card-info { 
+            padding: 18px; 
+            border-top: 4px solid var(--ruby-red); 
+        }
+
+        .student-name { 
+            font-weight: 900; 
+            color: var(--ruby-dark); 
+            font-size: 1rem; 
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .activity-tag { 
+            color: #C2185B; 
+            font-size: 0.85rem; 
+            font-style: italic; 
+            font-weight: 500;
+        }
+
+        /* --- Footer Styles --- */
+        footer { 
+            background-color: white; 
+            padding: 30px 20px; 
+            text-align: center; 
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Corrected Navigation -->
+    <nav>
+        <a href="index.html" class="nav-brand">
+            <img src="OBMC Logo.png" alt="OBMC Logo">
+            <span>OBMC</span>
+        </a>
+        <div class="nav-links">
+           <a href="index2.html">💎 Classmates</a>
+           <a href="index3.html">📅 Attendance</a>
+           <a href="index4.html">📸 Activities</a>
+        </div>
+    </nav>
+
+    <!-- Header Content -->
+    <header class="text-center py-12 px-4">
+        <h1 class="text-4xl md:text-5xl font-black text-[#880E4F] drop-shadow-sm">
+            Highlights of Our 10-Ruby Journey 💎
+        </h1>
+        <p class="text-gray-600 mt-4 text-lg">Capturing memories of our 28 unique gems</p>
+        <div class="mt-6 w-24 h-1.5 bg-[#D32F2F] mx-auto rounded-full"></div>
+    </header>
+
+    <!-- Gallery Container -->
+    <main id="gallery-container" class="gallery-grid">
+        <div class="text-center col-span-full py-20">
+            <div class="inline-block animate-bounce text-4xl mb-4">💎</div>
+            <p class="text-xl font-bold text-[#880E4F]">Polishing gems... (Loading Gallery)</p>
+        </div>
+    </main>
+
+    <!-- Refined Footer -->
+    <footer class="flex flex-col items-center">
+        <div class="inline-flex items-center px-10 py-3 bg-[#FFEBEE] rounded-full border border-[#D32F2F] shadow-sm mb-4">
+            <p class="text-[#880E4F] font-bold text-sm tracking-tight italic">
+                © Copyright <span class="font-black">OBMC</span> | Year 2025-26 
+            </p>
+            <span class="ml-2 text-sm">💎</span>
+        </div>
+        <p class="text-[#D32F2F] text-[12px] font-black uppercase tracking-[0.3em]">
+            10 - Ruby Section
+        </p>
+    </footer>
+
+    <!-- PyScript Logic -->
+    <script type="py" src="main4.py"></script>
+
+</body>
+</html>

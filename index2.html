@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby Classmates System 💎</title>
+    
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .custom-shadow { box-shadow: 10px 10px 0px #D32F2F; }
+        nav {
+            width: 100%;
+            background-color: #D32F2F;
+            display: flex;
+            justify-content: space-between;  
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 4px solid #FFD700;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .nav-brand { display: flex; align-items: center; padding-left: 30px; cursor: pointer; text-decoration: none; }
+        .nav-brand img { height: 50px; width: auto; margin-right: 12px; }
+        .nav-brand span { font-size: 1.5rem; font-weight: 900; color: white; }
+        .nav-links { padding-right: 30px; }
+        .nav-links a { text-decoration: none; color: white; font-weight: bold; margin: 0 15px; padding: 8px 12px; border-radius: 12px; transition: 0.3s; }
+        .nav-links a:hover { background-color: #880E4F; color: #FFD700; }
+    </style>
+</head>
+<body class="bg-[#FFF5F5] min-h-screen flex flex-col items-center">
+
+
+    <nav>
+        <a href="index.html" class="nav-brand">
+            <img src="OBMC Logo.png" alt="OBMC Logo">
+            <span>OBMC</span>
+        </a>
+        <div class="nav-links">
+            <a href="index2.html">💎 Classmates</a>
+            <a href="index3.html">📅 Attendance</a>
+            <a href="index4.html">📸 Activities</a>
+        </div>
+    </nav>
+
+
+    <div class="w-full max-w-md bg-[#FFEBEE] rounded-[2.5rem] border-4 border-[#D32F2F] custom-shadow p-8 mt-10">
+        
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-black text-[#880E4F] flex justify-center items-center gap-2">
+                <span class="w-8 h-8 bg-[#D32F2F] rounded-full border-2 border-[#FFD700] shadow-sm"></span>
+              OBMC Gems!
+            </h1>
+            <p class="text-[#C2185B] mt-2 italic text-sm">Organize our class records 💎</p>
+        </div>
+
+        <div class="space-y-3 mb-6">
+            <input type="text" id="name" placeholder="Surname, First Name Second Name" class="w-full px-5 py-3 bg-white border-2 border-[#FFCDD2] rounded-2xl outline-none focus:ring-4 focus:ring-[#D32F2F]">
+            <input type="text" id="section" placeholder="Grade and Section" class="w-full px-5 py-3 bg-white border-2 border-[#FFCDD2] rounded-2xl outline-none focus:ring-4 focus:ring-[#D32F2F]">
+            <input type="text" id="subject" placeholder="Favorite Subject" class="w-full px-5 py-3 bg-white border-2 border-[#FFCDD2] rounded-2xl outline-none focus:ring-4 focus:ring-[#D32F2F]">
+            
+            <div class="flex gap-3 pt-2">
+                <button py-click="add_classmate_event" class="flex-1 bg-[#D32F2F] hover:bg-[#880E4F] text-white font-black py-3 rounded-2xl transition-all border-b-4 border-[#B71C1C] active:scale-95">
+                    Add 💎
+                </button>
+                <button py-click="display_list" class="flex-1 bg-[#FFD700] hover:bg-[#FBC02D] text-[#880E4F] font-black py-3 rounded-2xl transition-all border-b-4 border-[#D4AF37] active:scale-95">
+                    Show List
+                </button>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-[1.5rem] border-2 border-[#D32F2F] shadow-inner min-h-[120px]">
+            <h2 class="font-bold text-[#880E4F] mb-3 flex items-center gap-2">
+                <span>💎</span> Ruby Directory
+            </h2>
+            <div id="output" class="space-y-2 text-[#880E4F] text-sm">
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-12 mb-8 text-center">
+        <div class="flex flex-col items-center gap-2">
+            <hr class="w-24 border-2 border-[#D32F2F] rounded-full mb-2">
+            <div class="bg-[#FFEBEE] px-4 py-2 rounded-full border border-[#D32F2F] shadow-sm">
+                <p class="text-[#880E4F] font-bold text-sm">
+                    &copy; Copyright OBMC | Year 2025-26 💎
+                </p>
+            </div>
+            <p class="text-[#D32F2F] text-xs font-black uppercase tracking-widest">
+                10 - Ruby Section
+            </p>
+        </div>
+    </footer>
+
+    <script type="py" src="main2.py" config='{ "packages": ["numpy", "matplotlib"] }'></script>
+
+</body>
+</html>

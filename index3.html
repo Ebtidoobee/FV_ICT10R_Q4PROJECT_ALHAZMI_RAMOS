@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby Attendance Tracker 💎</title>
+    
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+        .custom-shadow { box-shadow: 10px 10px 0px #D32F2F; }
+  
+        nav {
+            width: 100%;
+            background-color: #D32F2F;
+            display: flex;
+            justify-content: space-between;  
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 4px dashed #FFD700;
+        }
+        .nav-brand { display: flex; align-items: center; padding-left: 30px; text-decoration: none; }
+        .nav-brand img { height: 50px; }
+        .nav-brand span { font-size: 1.5rem; font-weight: 900; color: white; }
+        .nav-links a { text-decoration: none; color: white; font-weight: bold; margin: 0 15px; padding: 8px 12px; border-radius: 12px; transition: 0.3s; }
+        .nav-links a:hover { background-color: white; color: #D32F2F; }
+
+        #graph-area img {
+            border-radius: 20px;
+            border: 3px solid #D32F2F;
+        }
+    </style>
+</head>
+<body class="bg-[#FFF5F5] min-h-screen flex flex-col items-center">
+
+
+    <nav>
+        <a href="index.html" class="nav-brand">
+            <img src="OBMC Logo.png" alt="OBMC Logo">
+            <span>OBMC</span>
+        </a>
+        <div class="nav-links">
+           <a href="index2.html">💎 Classmates</a>
+            <a href="index3.html">📅 Attendance</a>
+            <a href="index4.html">📸 Activities</a>
+        </div>
+    </nav>
+
+    <div class="flex flex-col lg:flex-row items-center justify-center gap-10 p-10 w-full max-w-6xl">
+        
+
+        <div class="w-full max-w-xs bg-[#FFEBEE] rounded-[2.5rem] border-4 border-[#D32F2F] custom-shadow p-8">
+            <h2 class="text-2xl font-black text-[#880E4F] text-center mb-6">Attendance Log</h2>
+            
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-[#880E4F] font-bold mb-1 text-sm">Select Day</label>
+                    <select id="day-select" class="w-full px-4 py-2 bg-white border-2 border-[#FFCDD2] rounded-xl outline-none focus:ring-2 focus:ring-[#D32F2F]">
+                        <option value="0">Monday</option>
+                        <option value="1">Tuesday</option>
+                        <option value="2">Wednesday</option>
+                        <option value="3">Thursday</option>
+                        <option value="4">Friday</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-[#880E4F] font-bold mb-1 text-sm">Absences</label>
+                    <input type="number" id="absences-input" placeholder="e.g. 2" class="w-full px-4 py-2 bg-white border-2 border-[#FFCDD2] rounded-xl outline-none focus:ring-2 focus:ring-[#D32F2F]">
+                </div>
+
+                <button py-click="update_data" class="w-full bg-[#D32F2F] hover:bg-[#880E4F] text-white font-black py-3 rounded-xl transition-all border-b-4 border-[#B71C1C] active:scale-95">
+                    Update Graph 📈
+                </button>
+            </div>
+        </div>
+
+
+        <div id="graph-area" class="bg-white p-6 rounded-[2.5rem] border-4 border-[#FFD700] shadow-xl flex items-center justify-center min-w-[300px] lg:min-w-[600px] min-h-[400px]">
+            <p class="text-[#D32F2F] font-bold italic">Plotting data...</p>
+        </div>
+    </div>
+
+ 
+    <footer class="mt-auto mb-10 text-center flex flex-col items-center">
+        <div class="w-20 h-1 bg-[#D32F2F] rounded-full mb-5"></div>
+        <div class="inline-flex items-center px-8 py-2.5 bg-[#FFEBEE] rounded-full border border-[#D32F2F] shadow-sm mb-4">
+            <p class="text-[#880E4F] font-bold text-sm tracking-tight italic">
+                © Copyright <span class="font-black">OBMC</span> | Year 2025-26 
+            </p>
+            <span class="ml-2 text-sm">💎</span>
+        </div>
+        <p class="text-[#D32F2F] text-[11px] font-black uppercase tracking-[0.2em]">
+            10 - Ruby Section
+        </p>
+    </footer>
+
+    <py-config>
+        packages = ["numpy", "matplotlib"]
+    </py-config>
+    <script type="py" src="main3.py"></script>
+
+</body>
+</html>
