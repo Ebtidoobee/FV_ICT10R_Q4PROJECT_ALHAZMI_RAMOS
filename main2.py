@@ -12,7 +12,7 @@ class Classmate:
     def introduce(self):
         return f"Hi! I am {self.name} from {self.section}. My favorite subject is {self.favorite_subject}."
 
-# Updated list with all 28 students from the directory
+
 classmates_list = [
     Classmate("Al Hazmi, Ebtisam A.", "10-Ruby", "ICT"),
     Classmate("Alvarez, Yaniszsol Aeiou", "10-Ruby", "Music"),
@@ -50,7 +50,7 @@ def display_list(event):
     
     for person in classmates_list:
         new_p = document.createElement("p")
-        # Updated border color to match your Ruby theme if needed
+
         new_p.className = "border-b border-[#FFCDD2] pb-1 mb-1 text-[#880E4F]"
         new_p.innerText = "💎 " + person.introduce()
         output_div.appendChild(new_p)
